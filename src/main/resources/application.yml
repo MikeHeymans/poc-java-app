@@ -1,0 +1,12 @@
+server:
+ port: 8100
+ 
+spring:
+ view:
+  prefix: /WEB-INF/jsp/
+  suffix: .jsp
+ datasource:
+  url: jdbc:sqlserver://didactischeleermiddelen1.database.windows.net:1433;database=didactischeleermiddelen1_db
+  password: Wijzijnnummer1!
+  username: didactischeleermiddelen1@didactischeleermiddelen1
+  driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
