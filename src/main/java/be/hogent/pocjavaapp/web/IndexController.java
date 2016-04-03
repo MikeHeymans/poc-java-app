@@ -17,7 +17,6 @@ public class IndexController {
 	
 	@RequestMapping(value = "", method=RequestMethod.GET)
 	ModelAndView index() {
-		
 		return new ModelAndView("index","gebruikers",gebruikerRepository.findAll());
 	}
 	

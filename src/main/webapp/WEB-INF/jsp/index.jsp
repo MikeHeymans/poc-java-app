@@ -1,32 +1,34 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" session="false"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<base href="${pageContext.servletContext.contextPath}/"/>
+<base href="${pageContext.servletContext.contextPath}/" />
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+<script src="/resources/js/jquery-2.2.2.min.js"></script>
+<script src="/resources/js/bootstrap.min.js"></script>
 <title>Home</title>
 </head>
 <body>
-<p>Index Pagina</p>
-<a href="/">Home</a>
-<a href="/reservatie">Reservaties</a>
-<a href="/materiaal">Materiaal</a>
-
-	<table>
-		<tr>
-			<th>id</th>
-			<th>Naam</th>
-		</tr>
-	<c:forEach items="${gebruikers}" var="gebruiker">
-		<tr>
-			<td>
-				${gebruiker.id }
-			</td>
-			<td>
-				${gebruiker.naam}
-			</td>
-		</tr>
-	</c:forEach>
-	</table>
+	<c:import url="/WEB-INF/jsp/shared/menu.jsp"></c:import>
+	<div class="container">
+		<div class="panel panel-default col-md-8 col-md-offset-2">
+			<div class="panel-heading">
+				<h3 class="panel-title">Welcome !</h3>
+			</div>
+			<div class="panel-body">Dit is een poc ter voorbereiding voor het java luik van het project. Authenticatie zit er (nog) niet in
+			, het kan zijn dat ik dat er later nog insteek. Werken met partials zou ook nog een nice-to-have zijn maar geen idee hoe dat moet of het zelfs kan ;)</div>
+		</div>
+		<div class="panel panel-default col-md-8 col-md-offset-2">
+			<div class="panel-heading">
+				<h3 class="panel-title">De gekende gebruikers</h3>
+			</div>
+			<div class="panel-body">
+				<c:forEach var="gebruiker" items="${gebruikers}">
+				<label class="col-md-4">Gebruiker ${gebruiker.id}:</label>${gebruiker.naam}</p>
+				</c:forEach>
+			</div>
+		</div>
+	</div>
+	<script src="/resources/js/navbar.js"></script>
 </body>
 </html>

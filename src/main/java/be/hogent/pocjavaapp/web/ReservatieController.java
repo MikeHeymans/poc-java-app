@@ -17,8 +17,8 @@ public class ReservatieController {
 	private ReservatieService reservatieService;
 	
 	@RequestMapping(value = "",method=RequestMethod.GET)
-	String index() {
-		return "reservaties/index";
+	public ModelAndView index() {
+		return new ModelAndView("reservaties/index","reservaties",reservatieService.findAll());
 	}
 	@RequestMapping(value = "/{id}")
 	public ModelAndView findOne(@PathVariable("id") Integer id) {
