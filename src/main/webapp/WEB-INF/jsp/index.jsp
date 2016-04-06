@@ -29,6 +29,5 @@
 			</div>
 		</div>
 	</div>
-	<script src="/resources/js/navbar.js"></script>
 </body>
 </html>
