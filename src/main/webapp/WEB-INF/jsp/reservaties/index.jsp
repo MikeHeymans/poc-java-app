@@ -26,9 +26,9 @@
 	<spring:url var='url' value='/reservatie/{id}'>
 		<spring:param name='id' value='${reservatie.id}'/>
 	</spring:url>
-		<tr>
+				<tr onclick="document.location='${url}'">
 			<td>
-				<a href='${url}'>Reservatie ${reservatie.id}</a>
+				${reservatie.id}
 			</td>
 			<td>
 				${reservatie.gebruiker.naam}

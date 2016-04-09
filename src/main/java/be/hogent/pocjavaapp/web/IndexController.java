@@ -19,5 +19,4 @@ public class IndexController {
 	ModelAndView index() {
 		return new ModelAndView("index","gebruikers",gebruikerRepository.findAll());
 	}
-	
 }

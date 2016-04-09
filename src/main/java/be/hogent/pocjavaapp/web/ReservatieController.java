@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import be.hogent.pocjavaapp.model.Reservatie;
 import be.hogent.pocjavaapp.service.ReservatieService;
 
 @Controller
@@ -21,7 +22,7 @@ public class ReservatieController {
 		return new ModelAndView("reservaties/index","reservaties",reservatieService.findAll());
 	}
 	@RequestMapping(value = "/{id}")
-	public ModelAndView findOne(@PathVariable("id") Integer id) {
-		return new ModelAndView("reservaties/detail", "reservatie", reservatieService.findOne(id));
+	public ModelAndView findOne(@PathVariable("id") Reservatie reservatie) {
+		return new ModelAndView("reservaties/detail", "reservatie",reservatie);
 	}
 }

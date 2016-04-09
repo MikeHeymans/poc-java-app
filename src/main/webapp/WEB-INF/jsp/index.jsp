@@ -24,7 +24,7 @@
 			</div>
 			<div class="panel-body">
 				<c:forEach var="gebruiker" items="${gebruikers}">
-				<label class="col-md-4">Gebruiker ${gebruiker.id}:</label>${gebruiker.naam}</p>
+					<p><label class="col-md-4">Gebruiker ${gebruiker.id}:</label>${gebruiker.naam}</p>
 				</c:forEach>
 			</div>
 		</div>

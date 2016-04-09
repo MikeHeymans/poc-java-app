@@ -23,4 +23,12 @@ public class MateriaalServiceImpl implements MateriaalService {
 	public List<Materiaal> search(String query) {
 		return materiaalRepository.search("%"+query+"%");
 	}
+	@Override
+	public void save(Materiaal materiaal) {
+		materiaalRepository.save(materiaal);
+	}
+	@Override
+	public void delete(Materiaal materiaal) {
+		materiaalRepository.delete(materiaal);
+	}
 }

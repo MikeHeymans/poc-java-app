@@ -2,14 +2,7 @@ package be.hogent.pocjavaapp.model;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 import lombok.Data;
 
 @Data
@@ -20,8 +13,15 @@ public class Gebruiker {
 	@Column(name = "GebruikersId")
 	@GeneratedValue
 	private Integer id;
-	@Column
 	private String naam;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "gebruiker")
 	private List<Reservatie> reservaties;
+	@ManyToMany
+	@JoinTable(name="gebruikerVerlanglijst",
+    joinColumns=
+        @JoinColumn(name="GebruikersId", referencedColumnName="GebruikersId"),
+    inverseJoinColumns=
+        @JoinColumn(name="MateriaalId", referencedColumnName="MateriaalId")
+    )
+	private List<Materiaal> verlanglijst;
 }

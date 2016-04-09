@@ -5,7 +5,11 @@ import java.util.List;
 import be.hogent.pocjavaapp.model.Materiaal;
 
 public interface MateriaalService {
-	public List<Materiaal> findAll();
+	List<Materiaal> findAll();
 	
-	public List<Materiaal> search(String query);
+	List<Materiaal> search(String query);
+	
+	void save(Materiaal materiaal);
+	
+	void delete(Materiaal materiaal);
 }
